@@ -1,0 +1,36 @@
+我选择了DOM接口中的`Element.querySelector()`方法进行研究。
+
+`Element.querySelector()`方法是用于返回文档中与指定选择器或选择器组匹配的第一个元素的方法。它从指定的元素开始，沿着文档的深度优先遍历顺序，返回最先匹配到的元素。如果没有找到匹配的元素，则返回`null`。
+
+可以通过以下步骤使用`Element.querySelector()`方法：
+
+1. 首先，选取一个DOM元素作为起点，可以是文档根节点（`document`对象）或其他具体的元素。
+2. 使用选择器来指定要匹配的元素，选择器可以是CSS选择器、类名、标签名等。
+3. 调用`querySelector()`方法，传入选择器作为参数。
+4. 如果找到匹配的元素，方法将返回该元素；否则返回`null`。
+
+下面是一个例子，演示如何使用`Element.querySelector()`方法。
+
+假设我们有一个HTML页面，其中包含一个id为`myDiv`的`<div>`元素，并且该`<div>`元素中包含一个class为`myButton`的按钮：
+
+```html
+<div id="myDiv">
+  <button class="myButton">点击我</button>
+</div>
+```
+
+现在，我们想通过JavaScript代码选取这个按钮元素。可以使用以下代码：
+
+```javascript
+var myDiv = document.getElementById('myDiv');  // 先选取包裹按钮的<div>元素
+var button = myDiv.querySelector('.myButton'); // 使用选择器'.myButton'匹配按钮
+
+// 现在可以对选中的按钮元素进行操作了
+button.addEventListener('click', function() {
+  console.log('按钮被点击了！');
+});
+```
+
+在上述例子中，我们首先使用`document.getElementById()`方法选取了id为`myDiv`的`<div>`元素，然后在`myDiv`元素上调用`querySelector()`方法来匹配class为`myButton`的按钮。最后，我们给按钮添加了一个点击事件监听器。
+
+这就是使用`Element.querySelector()`方法的一个简单示例。通过这个方法，我们可以方便地在DOM树中定位和操作特定的元素。
