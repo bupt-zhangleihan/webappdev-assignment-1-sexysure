@@ -1,0 +1,29 @@
+{
+  "manifest_version": 2,
+  "name": "My API Plugin",
+  "version": "1.0",
+  "description": "A browser plugin for calling APIs",
+  "permissions": [
+    "activeTab",
+    "https://api.example.com/"
+  ],
+  "browser_action": {
+    "default_demo": "demo.html",
+    "default_icon": {
+      "1": "graph1.jpg",
+      "2": "graph2.jpg",
+      "3": "graph3.jpg"
+    }
+  },
+  "icons": {
+    "1": "graph1.jpg",
+    "2": "graph2.jpg",
+    "3": "graph3.jpg"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["demo.js"]
+    }
+  ]
+}
